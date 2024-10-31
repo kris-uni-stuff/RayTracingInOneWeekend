@@ -23,7 +23,9 @@ public:
 
         for (int h = 0; h < image_height; h++)
         {
-            std::clog << "\rScanlines done: " << (float)h / (float)image_height << ' ' << std::flush;
+            float percf = (float)h / (float)image_height;
+            int perci = percf * 100;
+            std::clog << "\rScanlines done: " << perci << "%" << ' ' << std::flush;
             for (int w = 0; w < image_width; w++)
             {
                 colour pixel_color(0, 0, 0);
